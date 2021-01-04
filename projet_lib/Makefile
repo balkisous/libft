@@ -10,18 +10,22 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = *.c
+SRCS = $(wildcard ft_*.c)
+OBJ = $(SRCS:.c=.o)  
+NAME = libft.a
 RM = /bin/rm -f
-CC = gcc
+CC = clang
 FLAGS = -Wall -Wextra -Werror
+
+%.o: %.c 
+	$(CC) -c $(FLAGS) $<
 
 all: $(NAME)
 
-	$(CC) -c $(FLAGS) $(NAME)
-	ar rcs libft.a *.o
-	$(CC) -o -L -libft
+$(NAME): $(OBJ)
+		ar rcs $(NAME) $(OBJ)
 clean:
-	$(RM) *.o
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
