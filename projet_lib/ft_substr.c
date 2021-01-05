@@ -6,14 +6,14 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:44:50 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/11/23 12:06:03 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 19:45:45 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
-#include"libft.h"
+#include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
-
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *new;
 	unsigned int i;
@@ -25,7 +25,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[i] != '\0')
 		i++;
 	if (i < start)
-		return(0);
+		return (0);
 	i = 0;
 	while (s[start] != '\0')
 	{
@@ -34,5 +34,5 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	new[i] = '\0';
-	return(new);
+	return (new);
 }

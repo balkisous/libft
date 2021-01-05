@@ -6,14 +6,14 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 14:25:10 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/12/01 15:04:48 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 19:16:46 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
 
+#include "libft.h"
 #include <unistd.h>
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int i;
 	char n;

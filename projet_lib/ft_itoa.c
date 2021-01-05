@@ -6,13 +6,14 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:21:42 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/12/12 18:36:36 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 18:59:10 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-#include<stdlib.h>
-char *ft_reverse(char *str)
+#include "libft.h"
+#include <stdlib.h>
+
+char	*ft_reverse(char *str)
 {
 	int i;
 	int j;
@@ -20,8 +21,7 @@ char *ft_reverse(char *str)
 
 	i = 0;
 	j = ft_strlen(str);
-
-	while(j  > i)
+	while (j > i)
 	{
 		temp = str[i];
 		j--;
@@ -29,9 +29,10 @@ char *ft_reverse(char *str)
 		i++;
 		str[j] = temp;
 	}
-	return(str);
+	return (str);
 }
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
 	char *str;
 	int i;
@@ -41,7 +42,7 @@ char *ft_itoa(int n)
 	sign = 0;
 	str = malloc(sizeof(char) * 12);
 	if (str == 0 || n == 0)
-		return(0);
+		return (0);
 	if (n < 0)
 	{
 		sign = 1;
@@ -53,7 +54,7 @@ char *ft_itoa(int n)
 		i++;
 		n /= 10;
 	}
-	if(sign == 1)
+	if (sign == 1)
 		str[i] = '-';
-	return(ft_reverse(str));	
+	return (ft_reverse(str));
 }

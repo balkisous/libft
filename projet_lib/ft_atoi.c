@@ -6,13 +6,13 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:43:50 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/11/23 12:33:18 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 18:06:16 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int i;
 	int n;
@@ -21,8 +21,8 @@ int ft_atoi(const char *nptr)
 	n = 0;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		n = n * 10 + (nptr[i] - 48); 
+		n = n * 10 + (nptr[i] - 48);
 		i++;
 	}
-	return(n);
+	return (n);
 }

@@ -6,12 +6,13 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:58:45 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/12/13 17:49:40 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 19:42:13 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
 
-char *ft_strrchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
 	char d;
 	char *t;
@@ -22,14 +23,14 @@ char *ft_strrchr(const char *s, int c)
 	t = (char *)s;
 	i = 0;
 	j = 0;
-	while(t[i] != '\0')
+	while (t[i] != '\0')
 	{
-		if(t[i] == d)
+		if (t[i] == d)
 			j = i;
 		i++;
 	}
 	if (j > 0)
-		return(&t[j]);
-	else 
-		return(0);
+		return (&t[j]);
+	else
+		return (0);
 }

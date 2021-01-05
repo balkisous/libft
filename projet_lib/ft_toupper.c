@@ -6,19 +6,19 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:08:27 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/11/19 19:14:12 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 19:48:12 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-int ft_toupper(int c)
+#include "libft.h"
 
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-	{	
+	{
 		c -= 32;
-		return(c);
+		return (c);
 	}
-	else 
-		return(c);
+	else
+		return (c);
 }

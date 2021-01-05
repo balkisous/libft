@@ -6,14 +6,14 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 16:08:01 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/11/21 11:00:09 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 19:25:57 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
 
+#include "libft.h"
 #include <stdlib.h>
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	int i;
 	char *copy;
@@ -21,10 +21,9 @@ char *ft_strdup(const char *s)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-
 	copy = malloc(sizeof(char const) * (i + 1));
-       	if (copy == NULL)
-		return(0);
+	if (copy == NULL)
+		return (0);
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -33,5 +32,4 @@ char *ft_strdup(const char *s)
 	}
 	copy[i] = '\0';
 	return (copy);
-
 }

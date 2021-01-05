@@ -6,13 +6,14 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:53:03 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/12/13 17:45:27 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 19:14:21 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-#include<stdio.h>
-void *ft_memmove(void *dest, const void *src, size_t n)
+#include "libft.h"
+#include <stdio.h>
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char *dst;
 	char *s;
@@ -22,18 +23,12 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	dst = (char *)dest;
 	s = (char *)src;
 	i = 0;
-
-
-	while(n >= i)
+	while (n >= i)
 	{
 		temp[i] = s[i];
 		i++;
 		n--;
 	}
-
-
-	printf("%s\n", temp);
-
 	i = 0;
 	while (n > i && temp[i] != '\0')
 	{
@@ -41,6 +36,5 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 		i++;
 		n--;
 	}
-
-	return(dest);
+	return (dest);
 }

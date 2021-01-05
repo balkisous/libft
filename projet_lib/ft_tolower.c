@@ -6,18 +6,19 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:17:45 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/11/19 19:23:34 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 19:46:49 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
+
+#include "libft.h"
 
 int ft_tolower(int c)
 {
-	if(c >= 65 && c <= 90)
+	if (c >= 65 && c <= 90)
 	{
 		c += 32;
-		return(c);
+		return (c);
 	}
-	else 
-		return(c);
+	else
+		return (c);
 }

@@ -6,11 +6,12 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 08:08:18 by bben-yaa          #+#    #+#             */
-/*   Updated: 2020/12/13 17:39:26 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/05 18:22:34 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
-#include<stdio.h>
+
+#include "libft.h"
+#include <stdio.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -19,10 +20,10 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	t = (char *)s;
-	while(n > 0)
+	while (n > 0)
 	{
 		t[i] = '\0';
 		n--;
-		i++;	
+		i++;
 	}
 }
