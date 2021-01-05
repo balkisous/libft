@@ -9,11 +9,12 @@
 /*   Updated: 2020/12/29 17:45:16 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int ft_strlen(char *s)
+int ft_sstrlen(char *s)
 {
 	unsigned int i;
 
@@ -31,7 +32,7 @@ char *ft_strmapi(char const *s, char(*f)(unsigned int, char))
 	
 	i = 0;
 	st =(char *)s;
-	str = malloc(sizeof(char) *(ft_strlen(st) + 1));
+	str = malloc(sizeof(char) *(ft_sstrlen(st) + 1));
 	if (str == 0)
 		return(0);
 	while (st[i])
@@ -47,6 +48,7 @@ char *ft_strmapi(char const *s, char(*f)(unsigned int, char))
 	}
 	return(str);
 }
+/*
 char ft_a()
 {
 	
@@ -56,3 +58,4 @@ int main ()
 	printf("%s\n", ft_strmapi("La belle au bois dormant"));
 	return(0);
 }
+*/

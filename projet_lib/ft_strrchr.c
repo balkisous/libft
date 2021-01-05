@@ -9,6 +9,7 @@
 /*   Updated: 2020/12/13 17:49:40 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
 char *ft_strrchr(const char *s, int c)
 {
@@ -27,7 +28,6 @@ char *ft_strrchr(const char *s, int c)
 			j = i;
 		i++;
 	}
-	printf("%d\n", j);
 	if (j > 0)
 		return(&t[j]);
 	else 

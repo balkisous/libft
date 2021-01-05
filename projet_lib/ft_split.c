@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 #include <stdio.h>
-
+/*
 char **ft_split(char const *s, char c)
 {
 	char **new;
@@ -53,3 +53,4 @@ int main ()
 	printf("%s\n", ft_split(s, c));
 	return(0);
 }
+*/

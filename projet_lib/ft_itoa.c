@@ -10,17 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include"libft.h"
 #include<stdlib.h>
-int ft_strlen(char *n)
-{
-	int i;
-	
-	i = 0;
-	while(n[i] != '\0')
-		i++;
-	return(i);
-}
-
 char *ft_reverse(char *str)
 {
 	int i;

@@ -9,6 +9,7 @@
 /*   Updated: 2020/11/25 22:08:28 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
 char *ft_strchr(const char* s, int c)
 {
@@ -24,7 +25,6 @@ char *ft_strchr(const char* s, int c)
 	{
 		if (t[i] == d)
 		{
-			printf("d == t\n");
 			return(&t[i]);
 		}
 		i++;

@@ -9,18 +9,9 @@
 /*   Updated: 2020/12/04 14:55:41 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
-int ft_strlen(char *str)
-{
-	int i; 
-
-	i = 0;
-
-	while(str[i])
-		i++;
-	return(i);
-}
-
+#include<stdio.h>
 size_t ft_strlcat(char *dst, const char *src, size_t size )
 {
 	size_t s1;
