@@ -61,12 +61,10 @@ char	*ft_select_fill_2(char *s, char *sep, char *str)
 {
 	int i;
 	int j;
-	int k;
 	int l;
 
 	i = ft_strlen(str);
 	j = 0;
-	k = 0;
 	l = ft_strlen(str);
 	while (l > 0)
 	{
@@ -75,15 +73,16 @@ char	*ft_select_fill_2(char *s, char *sep, char *str)
 			if (s[l] == sep[j])
 			{
 				i--;
-				k++;
 			}
 			j++;
 		}
-		if (k == 0)
+		if (i != l)
 			l = 0;
 		j = 0;
 		l--;
 	}
+	printf("%d\n", i);
+	printf("%s\n", str);
 	str[i] = '\0';
 	return (str);
 }
@@ -109,8 +108,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int main()
 {
-	char *s = "papforêt bleupap";
-	char *sep = "ip";
+	char *s = "papaforêt bleupap";
+	char *sep = "pa";
 	char *str;
 	str = malloc(sizeof(char) * 20);
 	printf("%s\n", ft_strtrim(s, sep));

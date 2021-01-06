@@ -13,12 +13,11 @@
 #include <stdlib.h>
 #include "libft.h"
 #include <stdio.h>
-/*
+
 char **ft_split(char const *s, char c)
 {
 	char **new;
 	char *str;
-	char *dst;
 	int i;
 	int j;
 
@@ -33,15 +32,20 @@ char **ft_split(char const *s, char c)
 			j++;
 		i++;
 	}
+	printf("%d\n", j);
 	new = malloc(sizeof(char) * j);
-	i = 0;
-	while (j >= 0)
+	while (j > 0)
 	{
 		if (i == c)
 		{
 			ft_strdup(str);
 		}
-		i++;
+		j--;
+		i--;
+	}
+	while(j > 0)
+	{
+		printf("%s\n", str);
 		j--;
 	}
 	return(new);
@@ -50,7 +54,6 @@ int main ()
 {
 	char *s = "Hello/les/gens";
 	char c = '/';
-	printf("%s\n", ft_split(s, c));
+	ft_split(s, c);
 	return(0);
 }
-*/
