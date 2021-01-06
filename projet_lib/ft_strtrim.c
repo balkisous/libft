@@ -12,7 +12,6 @@
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /*
 char *ft_choose(char *sep)
@@ -76,9 +75,12 @@ char	*ft_select_fill_2(char *s, char *sep, char *str)
 			if (s[l] == sep[j])
 			{
 				i--;
+				k++;
 			}
 			j++;
 		}
+		if (k == 0)
+			l = 0;
 		j = 0;
 		l--;
 	}
@@ -104,9 +106,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
+#include <stdio.h>
 int main()
 {
-	char *s = "papforêt bleuappa";
+	char *s = "papforêt bleupap";
 	char *sep = "ip";
 	char *str;
 	str = malloc(sizeof(char) * 20);
