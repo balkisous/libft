@@ -27,7 +27,7 @@ char *ft_choose(char *sep)
 	}
 }
 */
-char	*ft_select_fill_1(char *s, char *sep, char* str)
+char	*ft_select_fill_1(char *s, char *sep, char *str)
 {
 	int i;
 	int j;
@@ -38,7 +38,7 @@ char	*ft_select_fill_1(char *s, char *sep, char* str)
 	j = 0;
 	k = 0;
 	l = 0;
-	while(s[l])
+	while (s[l])
 	{
 		while (sep[j])
 		{
@@ -57,6 +57,7 @@ char	*ft_select_fill_1(char *s, char *sep, char* str)
 	}
 	return (str);
 }
+
 char	*ft_select_fill_2(char *s, char *sep, char *str)
 {
 	int i;
@@ -68,11 +69,11 @@ char	*ft_select_fill_2(char *s, char *sep, char *str)
 	j = 0;
 	k = 0;
 	l = ft_strlen(str);
-	while(l > 0)
+	while (l > 0)
 	{
 		while (sep[j])
 		{
-			if(s[l] == sep[j])
+			if (s[l] == sep[j])
 			{
 				i--;
 			}
@@ -81,30 +82,21 @@ char	*ft_select_fill_2(char *s, char *sep, char *str)
 		j = 0;
 		l--;
 	}
-	/*
-	while(l > i)
-	{
-		str[k] = s[i];
-		printf("str %s\n", str);
-		k++;
-		i++;
-	}
-	*/
 	str[i] = '\0';
 	return (str);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *s;
-	char *sep;
-	char *str;
-	int j;
+	char	*s;
+	char	*sep;
+	char	*str;
+	int		j;
 
 	s = (char *)s1;
 	sep = (char *)set;
 	j = ft_strlen(s);
-	str = malloc(sizeof(char)*(j + 1));
+	str = malloc(sizeof(char) * (j + 1));
 	if (str == 0)
 		return (0);
 	str = ft_select_fill_1(s, sep, str);

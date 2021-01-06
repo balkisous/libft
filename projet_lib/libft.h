@@ -11,12 +11,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __LIBFT_H__
-#define __LIBFT_H__
+#include <stdio.h>
 
-#include<stdio.h>
+#ifndef	__LIBFT_H__
+#define	__LIBFT_H__
 
-void *ft_memset(void *s, int c, size_t n); 
+void *ft_memset(void *s, int c, size_t n);
 void ft_bzero(void *s, size_t n);
 void *ft_memcpy(void *dest, const void *src, size_t n);
 void *ft_memccpy(void *dest, const void *src, int c, size_t n);

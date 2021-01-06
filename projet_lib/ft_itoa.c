@@ -15,9 +15,9 @@
 
 char	*ft_reverse(char *str)
 {
-	int i;
-	int j;
-	char temp;
+	int		i;
+	int		j;
+	char	temp;
 
 	i = 0;
 	j = ft_strlen(str);
@@ -34,9 +34,9 @@ char	*ft_reverse(char *str)
 
 char	*ft_itoa(int n)
 {
-	char *str;
-	int i;
-	int sign;
+	char	*str;
+	int		i;
+	int		sign;
 
 	i = 0;
 	sign = 0;

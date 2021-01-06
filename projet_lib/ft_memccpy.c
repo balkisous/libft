@@ -15,10 +15,10 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t i;
-	char d;
-	char *dst;
-	char *s;
+	size_t		i;
+	char		d;
+	char		*dst;
+	char		*s;
 
 	i = 0;
 	dst = (char *)dest;

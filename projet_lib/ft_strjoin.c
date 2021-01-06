@@ -13,37 +13,35 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strjoin(char const *s1,
-		char const *s2)
+char	*ft_fill(char *new, const char *s, int k)
 {
-	char *new;
 	int i;
-	int j;
-	int k;
 
 	i = 0;
-	j = 0;
-	k = 0;
-	while (s1[i] != '\0')
+	while (s[i])
+	{
+		new[k] = s[i];
 		i++;
-	while (s2[j] != '\0')
-		j++;
+		k++;
+	}
+	return (new);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*new;
+	int		i;
+	int		j;
+	int		k;
+
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	k = 0;
 	new = malloc(sizeof(char) * (i + j));
 	if (malloc(sizeof(char) * (i + j)) == 0)
 		return (0);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		new[k] = s1[i];
-		i++;
-		k++;
-	}
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		new[k] = s2[i];
-		k++;
-		i++;
-	}
+	new = ft_fill(new, s1, k);
+	k = i;
+	new = ft_fill(new, s2, k);
 	return (new);
 }

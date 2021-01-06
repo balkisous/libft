@@ -15,9 +15,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int i;
-	char n;
-	char z;
+	int		i;
+	char	n;
+	char	z;
 
 	i = 0;
 	n = (char)'\n';

@@ -16,10 +16,10 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int i;
-	int j;
-	char *b;
-	char *l;
+	int		i;
+	int		j;
+	char	*b;
+	char	*l;
 
 	i = 0;
 	j = 0;

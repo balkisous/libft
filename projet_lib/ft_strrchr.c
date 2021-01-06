@@ -14,10 +14,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char d;
-	char *t;
-	int i;
-	int j;
+	char	d;
+	char	*t;
+	int		i;
+	int		j;
 
 	d = (char)c;
 	t = (char *)s;
