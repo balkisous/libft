@@ -6,36 +6,21 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:44:33 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/05 19:44:33 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:12:26 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-/*
-char *ft_choose(char *sep)
-{
-	int i;
-
-	i = 0;
-	while (sep[i])
-	{
-		if()
-
-	}
-}
-*/
-char	*ft_select_fill_1(char *s, char *sep, char *str)
+static	char	*ft_select_fill_1(char *s, char *sep, char *str)
 {
 	int i;
 	int j;
-	int k;
 	int l;
 
 	i = 0;
 	j = 0;
-	k = 0;
 	l = 0;
 	while (s[l])
 	{
@@ -48,16 +33,17 @@ char	*ft_select_fill_1(char *s, char *sep, char *str)
 		j = 0;
 		l++;
 	}
+	l = 0;
 	while (s[i])
 	{
-		str[k] = s[i];
+		str[l] = s[i];
 		i++;
-		k++;
+		l++;
 	}
 	return (str);
 }
 
-char	*ft_select_fill_2(char *s, char *sep, char *str)
+static	char	*ft_select_fill_2(char *s, char *sep, char *str)
 {
 	int i;
 	int j;
@@ -68,20 +54,25 @@ char	*ft_select_fill_2(char *s, char *sep, char *str)
 	l = ft_strlen(str);
 	while (l > 0)
 	{
+		printf("la grande boucle\n");
 		while (sep[j])
 		{
+			printf("here 1\n");
+			printf("l = %d\n", l);
 			if (s[l] == sep[j])
 			{
+				printf("here\n");
 				i--;
 			}
 			j++;
 		}
 		if (i != l)
-			l = 0;
+			break;
 		j = 0;
 		l--;
 	}
-	printf("%d\n", i);
+	printf("l %d\n", l);
+	printf("i %d\n", i);
 	printf("%s\n", str);
 	str[i] = '\0';
 	return (str);
@@ -108,8 +99,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int main()
 {
-	char *s = "papaforêt bleupap";
-	char *sep = "pa";
+	char *s = "__//forêt bleu__/";
+	char *sep = "/_";
 	char *str;
 	str = malloc(sizeof(char) * 20);
 	printf("%s\n", ft_strtrim(s, sep));
