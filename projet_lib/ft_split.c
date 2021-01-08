@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:57:48 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/07 17:09:23 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/08 12:14:16 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ char** ft_fill(int j, char **new, char *s, char c)
 	l = 0;
 	if (s[0] != c && k < j)
 	{
-		new[k] = ft_strdup_sep(&s[0], c);
-//		printf("here\n");
+		new[0] = ft_strdup_sep(&s[0], c);
 		printf("%s\n", new[0]);
 		k++;
 //		printf("k dasn 0 %d\n", k);
@@ -79,10 +78,14 @@ char** ft_fill(int j, char **new, char *s, char c)
 //			printf("k dasn lol  %d\n", k);
 			new[k] = ft_strdup_sep(&s[l], c);
 			printf("%s\n", new[k]);
+
+			printf("dans la boucle qui rempli, la premiere ligne %s\n", new[0]);
+			printf("dans la boucle la premiere lettre %c\n", new[0][0]);
 			k++;
 		}
 		l++;
 	}
+	printf("la premiere ligne %s\n", new[0]);
 	return(new);
 }
 
@@ -90,7 +93,7 @@ char **ft_split(char const *s, char c)
 {
 	char	**new;
 	char	*str;
-	int	i;
+	int		i;
 	int 	j;
 
 	str = (char *)s;
@@ -98,22 +101,26 @@ char **ft_split(char const *s, char c)
 	j = ft_count(str, c);
 	if (str == 0)
 		return(0);
-	new = malloc(sizeof(char) * j);
+	new = malloc(sizeof(char) * j + 1);
 	if(new == NULL)
 		return (0);
 	new = ft_fill(j, new, str, c);
+
+	printf("j = %d\n", j);
+	new[j ] = NULL;
 	printf("new[0] %s\n", new[0]);
 	printf("new[1] %s\n", new[1]);
 	printf("new[2] %s\n", new[2]);
 	printf("new[3] %s\n", new[3]);
 	printf("new[4] %s\n", new[4]);
+	printf("new[5] %s\n", new[5]);
 	return (new);
 
 }
 #include <stdio.h>
 int main ()
 {
-	char *s ="Hello   Coucou    les amis  berk";	
+	char *s ="Hello coucou  les amis berk";	
 	char c = ' ';
 	ft_split(s, c);
 //	printf("%d\n", ft_count(s, c));
