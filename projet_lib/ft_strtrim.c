@@ -12,7 +12,15 @@
 
 #include "libft.h"
 #include <stdlib.h>
+static int 	ft_strleng(char *s)
+{
+	int i;
 
+	i = 0;
+	while(s[i])
+		i++;
+	return (i - 1);
+}
 static	char	*ft_select_fill_1(char *s, char *sep, char *str)
 {
 	int i;
@@ -50,23 +58,16 @@ static	char	*ft_select_fill_2(char *s, char *sep, char *str)
 	int l;
 	int k;
 
-	i = ft_strlen(str);
+	i = ft_strleng(str) + 1;
 	j = 0;
-//	l = ft_strlen(str);
-	l = 13;
-	printf("l %d\n", l);
+	l = ft_strleng(str);
 	k = 1;
 	while (k != 0)
 	{
-		printf("la grande boucle\n");
 		while (sep[j])
 		{
-			printf("lool\n");
-			printf("s %c\n",str[13]);
-			printf("sep %c\n",sep[j]);
 			if (s[l] == sep[j])
 			{
-				printf("here\n");
 				i--;
 				k++;
 				break;
@@ -74,15 +75,14 @@ static	char	*ft_select_fill_2(char *s, char *sep, char *str)
 			k = 0;
 			j++;
 		}
-		printf("heeeere\n");
 		j = 0;
 		if (k > 0)
 			l--;
 		else
 			str[i] = '\0';
 	}
-	printf("%s\n", str);
 	str[i] = '\0';
+	printf("str pour strtrim %s\n", str);
 	return (str);
 }
 
@@ -95,7 +95,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	s = (char *)s1;
 	sep = (char *)set;
-	j = ft_strlen(s);
+	j = ft_strleng(s);
 	str = malloc(sizeof(char) * (j + 1));
 	if (str == 0)
 		return (0);
@@ -108,19 +108,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 int main()
 {
 	int i = 0;
-	char *s = "forêt bleu__/";
-	char *sep = "/____";
+	char *s = "lalallllslaforêt bleullalallsssll";
+	char *sep = "lasssl";
 	char *str;
-	printf("strlen of s %zu\n", ft_strlen(s));
-	str = malloc(sizeof(char) * ft_strlen(s) + 1);
+	str = malloc(sizeof(char) * ft_strleng(s) + 1);
 	while (s[i])
 	{
 		str[i] = s[i];
 		i++;
 	}
 	str[i] = '\0';
-	printf("str avant %s\n",str);
 	printf("%s\n", ft_select_fill_2(s, sep, str));
-//	printf("%s\n", ft_strtrim(s, sep));
+	printf("%s\n", ft_strtrim(s, sep));
 	return(0);
 }
