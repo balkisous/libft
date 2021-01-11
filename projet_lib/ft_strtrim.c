@@ -48,10 +48,11 @@ static	char	*ft_select_fill_1(char *s, char *sep, char *str)
 		i++;
 		l++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 
-static	char	*ft_select_fill_2(char *s, char *sep, char *str)
+static	char	*ft_select_fill_2(char *sep, char *str)
 {
 	int i;
 	int j;
@@ -66,8 +67,8 @@ static	char	*ft_select_fill_2(char *s, char *sep, char *str)
 	{
 		while (sep[j])
 		{
-			if (s[l] == sep[j])
-			{
+			if (str[l] == sep[j])
+			{		
 				i--;
 				k++;
 				break;
@@ -82,7 +83,6 @@ static	char	*ft_select_fill_2(char *s, char *sep, char *str)
 			str[i] = '\0';
 	}
 	str[i] = '\0';
-	printf("str pour strtrim %s\n", str);
 	return (str);
 }
 
@@ -100,25 +100,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (str == 0)
 		return (0);
 	str = ft_select_fill_1(s, sep, str);
-	str = ft_select_fill_2(s, sep, str);
+	str = ft_select_fill_2(sep, str);
 	return (str);
 }
 
 #include <stdio.h>
-int main()
+int main(void)
 {
-	int i = 0;
-	char *s = "lalallllslaforêt bleullalallsssll";
-	char *sep = "lasssl";
-	char *str;
-	str = malloc(sizeof(char) * ft_strleng(s) + 1);
-	while (s[i])
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	printf("%s\n", ft_select_fill_2(s, sep, str));
+	char *s = "la foret bleu good";
+	char *sep = " glado";
 	printf("%s\n", ft_strtrim(s, sep));
-	return(0);
+	return (0);
 }

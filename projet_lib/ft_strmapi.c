@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_sstrlen(char *s)
+static	int	ft_sstrlen(char *s)
 {
 	unsigned int i;
 
@@ -39,6 +39,7 @@ char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 		str[i] = st[i];
 		i++;
 	}
+	str[i] = '\0';
 	i = 0;
 	while (str[i])
 	{
