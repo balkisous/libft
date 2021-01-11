@@ -12,16 +12,18 @@
 
 #include "libft.h"
 #include <stdlib.h>
-static int 	ft_strleng(char *s)
+
+static int	ft_strleng(char *s)
 {
 	int i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 		i++;
 	return (i - 1);
 }
-static	char	*ft_select_fill_1(char *s, char *sep, char *str)
+
+static char		*ft_select_fill_1(char *s, char *sep, char *str)
 {
 	int i;
 	int j;
@@ -68,10 +70,10 @@ static	char	*ft_select_fill_2(char *sep, char *str)
 		while (sep[j])
 		{
 			if (str[l] == sep[j])
-			{		
+			{
 				i--;
 				k++;
-				break;
+				break ;
 			}
 			k = 0;
 			j++;
@@ -102,13 +104,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_select_fill_1(s, sep, str);
 	str = ft_select_fill_2(sep, str);
 	return (str);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	char *s = "la foret bleu good";
-	char *sep = " glado";
-	printf("%s\n", ft_strtrim(s, sep));
-	return (0);
 }
