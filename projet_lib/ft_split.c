@@ -6,14 +6,14 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:57:48 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/08 12:14:16 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/11 16:55:57 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int ft_count(char *s, char sep)
+int	ft_count(char *s, char sep)
 {
 	int i;
 	int count;
@@ -24,7 +24,7 @@ int ft_count(char *s, char sep)
 	{
 		count++;
 	}
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i - 1] == sep && s[i] != sep)
 		{
@@ -35,28 +35,28 @@ int ft_count(char *s, char sep)
 	return (count);
 }
 
-char *ft_strdup_sep(char *s, char sep)
+char	*ft_strdup_sep(char *s, char sep)
 {
-	int 	i;
+	int	i;
 	char	*dest;
-	
+
 	i = 0;
-	while(s[i] != sep)
+	while (s[i] != sep)
 		i++;
 	dest = malloc(sizeof(char) * (i + 1));
-	if(dest == NULL)
-		return(0);
+	if (dest == NULL)
+		return (0);
 	i = 0;
-	while(s[i] != sep)
+	while (s[i] != sep)
 	{
 		dest[i] = s[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return(dest);
+	return (dest);
 }
 
-char** ft_fill(int j, char **new, char *s, char c)
+char	**ft_fill(int j, char **new, char *s, char c)
 {
 	int k;
 	int l;
@@ -68,48 +68,32 @@ char** ft_fill(int j, char **new, char *s, char c)
 		new[0] = ft_strdup_sep(&s[0], c);
 		k++;
 	}
-	while(s[l] && k < j)
+	while (s[l] && k < j)
 	{
-		if (s[l - 1] == c && s[l] != c) 
+		if (s[l - 1] == c && s[l] != c)
 		{
 			new[k] = ft_strdup_sep(&s[l], c);
 			k++;
 		}
 		l++;
 	}
-	return(new);
+	return (new);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**new;
 	char	*str;
-	int		i;
-	int 	j;
+	int	j;
 
 	str = (char *)s;
-	i = 0;
 	j = ft_count(str, c);
 	if (str == 0)
-		return(0);
+		return (0);
 	new = malloc(sizeof(char *) * j + 1);
-	if(new == NULL)
+	if (new == NULL)
 		return (0);
 	new = ft_fill(j, new, str, c);
 	new[j] = NULL;
-	while(i <= j)
-	{
-		printf("%s\n", new[i]);
-		i++;
-	}
 	return (new);
-
-}
-#include <stdio.h>
-int main ()
-{
-	char *s ="   Hello coucou  les amis berk   comment vous   allez haha   ";	
-	char c = ' ';
-	ft_split(s, c);
-	return(0);
 }

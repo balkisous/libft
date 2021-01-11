@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:44:33 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/08 13:12:26 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/11 16:04:14 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,22 @@ static int	ft_strleng(char *s)
 	return (i - 1);
 }
 
-static char		*ft_select_fill_1(char *s, char *sep, char *str)
+static char	*ft_fill(char *str, char *s, int i)
+{
+	int l;
+
+	l = 0;
+	while (s[i])
+	{
+		str[l] = s[i];
+		i++;
+		l++;
+	}
+	str[l] = '\0';
+	return (str);
+}
+
+static char	*ft_select_1(char *s, char *sep, char *str)
 {
 	int i;
 	int j;
@@ -43,25 +58,16 @@ static char		*ft_select_fill_1(char *s, char *sep, char *str)
 		j = 0;
 		l++;
 	}
-	l = 0;
-	while (s[i])
-	{
-		str[l] = s[i];
-		i++;
-		l++;
-	}
-	str[i] = '\0';
+	str = ft_fill(str, s, i);
 	return (str);
 }
 
 static	char	*ft_select_fill_2(char *sep, char *str)
 {
-	int i;
 	int j;
 	int l;
 	int k;
 
-	i = ft_strleng(str) + 1;
 	j = 0;
 	l = ft_strleng(str);
 	k = 1;
@@ -71,7 +77,6 @@ static	char	*ft_select_fill_2(char *sep, char *str)
 		{
 			if (str[l] == sep[j])
 			{
-				i--;
 				k++;
 				break ;
 			}
@@ -81,10 +86,8 @@ static	char	*ft_select_fill_2(char *sep, char *str)
 		j = 0;
 		if (k > 0)
 			l--;
-		else
-			str[i] = '\0';
 	}
-	str[i] = '\0';
+	str[l + 1] = '\0';
 	return (str);
 }
 
@@ -101,7 +104,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = malloc(sizeof(char) * (j + 1));
 	if (str == 0)
 		return (0);
-	str = ft_select_fill_1(s, sep, str);
+	str = ft_select_1(s, sep, str);
 	str = ft_select_fill_2(sep, str);
 	return (str);
 }
