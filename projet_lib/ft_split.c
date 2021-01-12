@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_count(char *s, char sep)
+int		ft_count(char *s, char sep)
 {
 	int i;
 	int count;
@@ -37,7 +37,7 @@ int	ft_count(char *s, char sep)
 
 char	*ft_strdup_sep(char *s, char sep)
 {
-	int	i;
+	int		i;
 	char	*dest;
 
 	i = 0;
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**new;
 	char	*str;
-	int	j;
+	int		j;
 
 	str = (char *)s;
 	j = ft_count(str, c);

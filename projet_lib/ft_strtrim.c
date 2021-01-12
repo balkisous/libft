@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_strleng(char *s)
+static int		ft_strleng(char *s)
 {
 	int i;
 
@@ -23,7 +23,7 @@ static int	ft_strleng(char *s)
 	return (i - 1);
 }
 
-static char	*ft_fill(char *str, char *s, int i)
+static char		*ft_fill(char *str, char *s, int i)
 {
 	int l;
 
@@ -38,7 +38,7 @@ static char	*ft_fill(char *str, char *s, int i)
 	return (str);
 }
 
-static char	*ft_select_1(char *s, char *sep, char *str)
+static char		*ft_select_1(char *s, char *sep, char *str)
 {
 	int i;
 	int j;
@@ -91,7 +91,7 @@ static	char	*ft_select_fill_2(char *sep, char *str)
 	return (str);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s;
 	char	*sep;

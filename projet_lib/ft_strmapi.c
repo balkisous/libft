@@ -23,11 +23,11 @@ static int	ft_sstrlen(char *s)
 	return (i);
 }
 
-char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
 	char	*st;
-	int	i;
+	int		i;
 
 	i = 0;
 	st = (char *)s;
