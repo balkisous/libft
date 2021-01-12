@@ -6,12 +6,11 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 20:01:02 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/05 19:05:43 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/12 20:21:20 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
@@ -30,5 +29,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		i++;
 		n--;
 	}
-	return (dst + i + 1);
+	return (dst);
 }
