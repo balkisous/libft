@@ -6,24 +6,38 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:43:50 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/13 10:12:47 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/14 18:48:09 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+static int	ft_check(const char *nptr)
+{
+	int i;
+
+	i = 0;
+	while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v'
+	|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
+		i++;
+	return (i);
+}
+int		ft_atoi(const char *nptr)
 {
 	int i;
 	int n;
 	int sign;
+	int k;
 
-	i = 0;
 	n = 0;
+	k = 0;
 	sign = 1;
-	if (nptr[i] == '-')
+	i = ft_check(nptr);
+	while (nptr[i] == '-' || nptr[i] == '+')
 	{
-		sign = -sign;
+		if (nptr[i] == '-')
+			sign = -sign;
+		k++;
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
@@ -31,5 +45,7 @@ int	ft_atoi(const char *nptr)
 		n = n * 10 + (nptr[i] - 48);
 		i++;
 	}
+	if (k > 1)
+		return (0);
 	return (n * sign);
 }

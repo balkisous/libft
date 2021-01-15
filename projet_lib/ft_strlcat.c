@@ -6,31 +6,35 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 10:42:31 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/05 19:31:09 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/13 22:40:26 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	s1;
-	size_t	s2;
 	size_t	i;
-	char	*srrc;
+	size_t	limit;
+	size_t	dst_size;
+	size_t	src_size;
 
-	s1 = ft_strlen(dst);
-	srrc = (char *)src;
-	s2 = ft_strlen(srrc);
-	i = 0;
-	if (size - 1 < s1)
-		return (size + s2);
-	while (s1 + i < size - 1)
+	if (dst && src)
 	{
-		dst[s1 + i] = src[i];
-		i++;
+		src_size = ft_strlen(src);
+		dst_size = ft_strlen(dst);
+		if (size <= dst_size)
+			return (size + src_size);
+		i = 0;
+		limit = size - dst_size - 1;
+		while (src[i] && i < limit)
+		{
+			dst[dst_size + i] = src[i];
+			i++;
+		}
+		dst[dst_size + i] = '\0';
+		return (dst_size + src_size);
 	}
-	dst[s1 + i] = '\0';
-	return (s1 + s2);
+	else
+		return (0);
 }
