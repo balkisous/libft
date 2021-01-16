@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:58:45 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/12 21:54:59 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/16 10:49:43 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ char	*ft_strrchr(const char *s, int c)
 			j = i;
 		i++;
 	}
-	if (j > 0)
+	if (t[i] == '\0' && t[i] == d)
+		return (&t[i]);
+	else if (j > 0)
 		return (&t[j]);
 	else
 		return (0);

@@ -6,13 +6,11 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:01:16 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/05 19:41:11 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/16 18:06:05 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
