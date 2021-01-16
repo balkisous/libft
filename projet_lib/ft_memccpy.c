@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 20:01:02 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/16 19:15:05 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/16 23:31:03 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		dst[i] = s[i];
 		i++;
 	}
-	return (dst);
+	if (s[i] == d)
+		return (dst[i]);
+	else
+		return (0);
 }
