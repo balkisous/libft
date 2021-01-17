@@ -6,19 +6,19 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:57:48 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/12 07:24:30 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 17:07:01 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int		ft_count(char *s, char sep)
+static int	ft_count(char *s, char sep)
 {
 	int i;
 	int count;
 
-	i = 0;
+	i = 1;
 	count = 0;
 	if (s[0] != sep)
 	{
@@ -35,7 +35,7 @@ int		ft_count(char *s, char sep)
 	return (count);
 }
 
-char	*ft_strdup_sep(char *s, char sep)
+static char	*ft_strdup_sep(char *s, char sep)
 {
 	int		i;
 	char	*dest;
@@ -56,7 +56,7 @@ char	*ft_strdup_sep(char *s, char sep)
 	return (dest);
 }
 
-char	**ft_fill(int j, char **new, char *s, char c)
+static char	**ft_fill(int j, char **new, char *s, char c)
 {
 	int k;
 	int l;
@@ -80,7 +80,7 @@ char	**ft_fill(int j, char **new, char *s, char c)
 	return (new);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**new;
 	char	*str;

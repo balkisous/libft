@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:58:45 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/16 10:49:43 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 17:03:11 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ char	*ft_strrchr(const char *s, int c)
 	d = (char)c;
 	t = (char *)s;
 	i = 0;
-	j = 0;
+	j = -1;
 	while (t[i] != '\0')
 	{
 		if (t[i] == d)
 			j = i;
 		i++;
 	}
-	if (t[i] == '\0' && t[i] == d)
+	if (t[i] == d)
 		return (&t[i]);
-	else if (j > 0)
+	else if (j >= 0)
 		return (&t[j]);
 	else
 		return (0);

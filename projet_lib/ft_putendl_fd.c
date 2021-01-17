@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 14:25:10 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/16 11:08:14 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 13:56:19 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,14 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int		i;
 	char	n;
-	char	z;
 
 	i = 0;
 	n = (char)'\n';
-	z = (char)'\0';
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
 		i++;
 	}
 	if (s[i] == '\0')
-	{
-		write(fd, &z, 1);
 		write(fd, &n, 1);
-	}
 }

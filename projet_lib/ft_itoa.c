@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:21:42 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/13 16:31:23 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 12:30:26 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,20 @@ static char	*ft_reverse(char *str)
 	return (str);
 }
 
+static void	ft_strcpy(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return;
+}
+
 static char	*ft_check(int n, char *str)
 {
 	int i;
@@ -39,7 +53,7 @@ static char	*ft_check(int n, char *str)
 	i = 0;
 	if (n == -2147483648)
 	{
-		str = "-2147483648";
+		ft_strcpy(str, "-2147483648");
 		return (str);
 	}
 	else if (n == 0)
