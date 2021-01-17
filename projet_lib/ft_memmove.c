@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:53:03 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/17 16:32:46 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 17:51:44 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 		return (dst);
 	}
-	else 
+	else
 	{
-		i = n;
-		while (i > 0)
+		while (n > 0)
 		{
-			i--;
-			dst[i] = s[i];
+			n--;
+			dst[n] = s[n];
 		}
-		return(dst);
+		return (dst);
 	}
 }

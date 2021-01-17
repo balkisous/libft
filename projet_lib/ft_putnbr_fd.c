@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 13:55:18 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/16 22:02:50 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 18:27:21 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	void	ft_putchar(char c, int fd)
 	write(fd, &c, 1);
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void			ft_putnbr_fd(int n, int fd)
 {
 	if (n >= 0 && n <= 9)
 		ft_putchar(n + '0', fd);

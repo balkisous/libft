@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:57:48 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/17 17:07:01 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 17:40:50 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ static char	*ft_strdup_sep(char *s, char sep)
 	char	*dest;
 
 	i = 0;
-	while (s[i] != sep)
+	while (s[i] != sep && s[i] != '\0')
 		i++;
 	dest = malloc(sizeof(char) * (i + 1));
 	if (dest == NULL)
 		return (0);
 	i = 0;
-	while (s[i] != sep)
+	while (s[i] != sep && s[i] != '\0')
 	{
 		dest[i] = s[i];
 		i++;
@@ -62,7 +62,7 @@ static char	**ft_fill(int j, char **new, char *s, char c)
 	int l;
 
 	k = 0;
-	l = 0;
+	l = 1;
 	if (s[0] != c && k < j)
 	{
 		new[0] = ft_strdup_sep(&s[0], c);

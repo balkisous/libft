@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:21:42 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/17 12:30:26 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 17:44:35 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	ft_strcpy(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return;
+	return ;
 }
 
 static char	*ft_check(int n, char *str)

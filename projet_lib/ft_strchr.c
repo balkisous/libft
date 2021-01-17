@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 17:47:22 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/15 16:22:55 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/17 18:24:48 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	d;
 	char	*t;
 
