@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:44:50 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/17 14:00:34 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/21 21:07:09 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	if (ft_strlen(s) < start)
-		return (0);
+		return (NULL);
 	new = malloc(sizeof(char) * (len + 1));
 	if (new == 0)
-		return (0);
+		return (NULL);
 	while (s[start] && len > 0)
 	{
 		new[i] = s[start];

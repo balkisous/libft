@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:21:42 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/17 17:44:35 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/21 11:15:01 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static char	*ft_reverse(char *str)
 		i++;
 		str[j] = temp;
 	}
+	str[ft_strlen(str) + 1] = '\0';
 	return (str);
 }
 
@@ -58,7 +59,7 @@ static char	*ft_check(int n, char *str)
 	}
 	else if (n == 0)
 	{
-		str[i] = '0';
+		ft_strcpy(str, "0");
 		return (str);
 	}
 	return (0);

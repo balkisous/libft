@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:57:48 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/17 17:40:50 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/01/21 21:08:35 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,10 @@ char		**ft_split(char const *s, char c)
 	str = (char *)s;
 	j = ft_count(str, c);
 	if (str == 0)
-		return (0);
+		return (NULL);
 	new = malloc(sizeof(char *) * j + 1);
 	if (new == NULL)
-		return (0);
+		return (NULL);
 	new = ft_fill(j, new, str, c);
 	new[j] = NULL;
 	return (new);
