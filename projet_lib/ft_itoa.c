@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:21:42 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/02/02 15:17:41 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/03 09:32:41 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,11 @@ char		*ft_itoa(int n)
 	}
 	while (n != 0)
 	{
-		str[i] = (n % 10) + '0';
-		i++;
+		str[i++] = (n % 10) + '0';
 		n /= 10;
 	}
 	if (sign == 1)
 		str[i++] = '-';
-	str[i] = '\0';
-	return(ft_reverse(str));
+	str[i++] = '\0';
+	return (ft_reverse(str));
 }

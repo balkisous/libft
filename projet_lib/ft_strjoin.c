@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 07:40:06 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/02/02 15:21:13 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/03 10:13:38 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	int		k;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	k = 0;
-	if(s1 == NULL || s2 == NULL)
-		return(NULL);
 	new = malloc(sizeof(char) * (i + j + 1));
 	if (new == NULL)
 		return (NULL);
