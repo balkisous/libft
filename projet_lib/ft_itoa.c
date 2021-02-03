@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:21:42 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/21 11:15:01 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/02 15:17:41 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static char	*ft_reverse(char *str)
 		i++;
 		str[j] = temp;
 	}
-	str[ft_strlen(str) + 1] = '\0';
 	return (str);
 }
 
@@ -73,9 +72,9 @@ char		*ft_itoa(int n)
 
 	i = 0;
 	sign = 0;
-	str = malloc(sizeof(char) * 12);
-	if (str == 0)
-		return (0);
+	str = malloc(sizeof(char) * 13);
+	if (str == NULL)
+		return (NULL);
 	if (n == -2147483648 || n == 0)
 		return (ft_check(n, str));
 	if (n < 0)
@@ -90,6 +89,7 @@ char		*ft_itoa(int n)
 		n /= 10;
 	}
 	if (sign == 1)
-		str[i] = '-';
-	return (ft_reverse(str));
+		str[i++] = '-';
+	str[i] = '\0';
+	return(ft_reverse(str));
 }

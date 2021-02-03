@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 14:06:07 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/21 21:14:42 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/02 15:12:33 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	i;
 
 	i = 0;
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	tab = malloc(size * nmemb);
-	if (tab == NULL)
+	if (tab == 0)
 		return (NULL);
 	while (nmemb > 0)
 	{
-		tab[i] = 0;
+		tab[i] = '\0';
 		i++;
 		nmemb--;
 	}

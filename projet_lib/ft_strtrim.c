@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:44:33 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/01/12 07:25:44 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/03 08:29:39 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,27 @@ static char		*ft_select_1(char *s, char *sep, char *str)
 	int j;
 	int l;
 
-	i = 0;
+	i = 1;
 	j = 0;
 	l = 0;
-	while (s[l])
+	while (s[l] && i != 0)
 	{
 		while (sep[j])
 		{
-			if (s[i] == sep[j])
+			if (s[l] == sep[j])
+			{
 				i++;
+				break ;
+			}
+			i = 0;
 			j++;
 		}
 		j = 0;
-		l++;
+		if (i > 0)
+			l++;
+	
 	}
-	str = ft_fill(str, s, i);
+	str = ft_fill(str, s, l);
 	return (str);
 }
 
@@ -71,7 +77,7 @@ static	char	*ft_select_fill_2(char *sep, char *str)
 	j = 0;
 	l = ft_strleng(str);
 	k = 1;
-	while (k != 0)
+	while (k != 0 && l >= 0)
 	{
 		while (sep[j])
 		{
@@ -101,9 +107,11 @@ char			*ft_strtrim(char const *s1, char const *set)
 	s = (char *)s1;
 	sep = (char *)set;
 	j = ft_strleng(s);
+	if (s1 == 0)
+		return(NULL);
 	str = malloc(sizeof(char) * (j + 1));
 	if (str == 0)
-		return (0);
+		return (NULL);
 	str = ft_select_1(s, sep, str);
 	str = ft_select_fill_2(sep, str);
 	return (str);
