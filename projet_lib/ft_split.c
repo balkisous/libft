@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:57:48 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/02/04 11:44:51 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/04 11:47:47 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static int	ft_count(char *s, char sep)
 
 	i = 1;
 	count = 0;
-	if(s[i])
+	if (s[i])
 	{
 		if (s[0] != sep)
-		count++;
+			count++;
 	}
 	while (s[i])
 	{
