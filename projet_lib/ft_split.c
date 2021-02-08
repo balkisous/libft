@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:57:48 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/02/04 11:47:47 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/08 21:40:43 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ static int	ft_count(char *s, char sep)
 
 	i = 1;
 	count = 0;
-	if (s[i])
-	{
-		if (s[0] != sep)
-			count++;
-	}
+	if (ft_strlen(s) == 0)
+		return (0);
+	if (s[0] != sep)
+		count++;
 	while (s[i])
 	{
 		if (s[i - 1] == sep && s[i] != sep)
@@ -91,10 +90,11 @@ char		**ft_split(char const *s, char c)
 		return (NULL);
 	str = (char *)s;
 	j = ft_count(str, c);
-	new = malloc(sizeof(char *) * (j + 2));
+	new = malloc(sizeof(char *) * (j + 1));
 	if (new == NULL)
 		return (NULL);
-	new = ft_fill(j, new, str, c);
+	if (ft_strlen(s) > 0)
+		new = ft_fill(j, new, str, c);
 	new[j] = NULL;
 	return (new);
 }
