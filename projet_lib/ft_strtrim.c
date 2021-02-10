@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:44:33 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/02/04 10:32:33 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/10 18:04:55 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	s = (char *)s1;
 	sep = (char *)set;
 	j = ft_strleng(s);
+	if (ft_strlen(sep) == 0)
+		return (ft_strdup(s));
 	str = malloc(sizeof(char) * (j + 2));
 	if (str == 0)
 		return (NULL);
