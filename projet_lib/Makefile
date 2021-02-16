@@ -6,7 +6,7 @@
 #    By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/13 09:58:26 by bben-yaa          #+#    #+#              #
-#    Updated: 2021/01/13 21:50:06 by bben-yaa         ###   ########.fr        #
+#    Updated: 2021/02/15 14:04:25 by bben-yaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ NAME = libft.a
 RM = /bin/rm -f
 CC = clang
 FLAGS = -Wall -Wextra -Werror
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c \
+	     ft_lstadd_back.c
+OBJ_BONUS = $(SRCS_BONUS:.c=.o)
 
 %.o: %.c 
 	$(CC) -c $(FLAGS) $<
@@ -31,9 +34,12 @@ all: $(NAME)
 $(NAME): $(OBJ)
 		ar rcs $(NAME) $(OBJ)
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ_BONUS) $(OBJ)
