@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 07:13:51 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/02/15 18:14:01 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/16 20:57:19 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 typedef	struct	s_list
 {
-	void	*content;
-	struct s_list *next;
-}		t_list;
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 void		*ft_memset(void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
@@ -52,13 +52,13 @@ char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 void		ft_putchar_fd(char c, int fd);
-void		ft_putstr_fd(char *s, int fd);
+void		t_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
-t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **alst, t_list *new);
+t_list		*ft_lstnew(void *content);
+t_list		*ft_lstlast(t_list *lst);
 
 #	endif
