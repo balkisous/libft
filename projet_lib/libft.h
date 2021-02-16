@@ -6,7 +6,7 @@
 /*   By: bben-yaa <bben-yaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 07:13:51 by bben-yaa          #+#    #+#             */
-/*   Updated: 2021/02/16 21:05:04 by bben-yaa         ###   ########.fr       */
+/*   Updated: 2021/02/16 21:23:37 by bben-yaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
 void			ft_putchar_fd(char c, int fd);
-void			t_putstr_fd(char *s, int fd);
+void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_lstadd_front(t_list **alst, t_list *new);
